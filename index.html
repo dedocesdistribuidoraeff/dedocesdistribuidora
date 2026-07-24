@@ -1,0 +1,222 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora de Doces E F F</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Configuração de Cores Personalizadas do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            pink: '#ec4899', // Rosa vibrante
+                            dark: '#831843', // Rosa escuro
+                            yellow: '#fbbf24', // Amarelo doce
+                            light: '#fdf2f8' // Fundo rosa bem claro
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Estilos adicionais para efeitos sutis */
+        .hero-bg {
+            background-image: linear-gradient(rgba(131, 24, 67, 0.7), rgba(236, 72, 153, 0.8)), url('https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .card-zoom:hover img {
+            transform: scale(1.05);
+        }
+        
+        img {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Navegação -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-candy-cane text-brand-pink text-3xl mr-3"></i>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl text-brand-dark leading-tight">Doces E F F</span>
+                        <span class="text-xs text-brand-pink tracking-widest font-semibold uppercase">Distribuidora</span>
+                    </div>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-gray-600 hover:text-brand-pink font-medium transition-colors">Início</a>
+                    <a href="#produtos" class="text-gray-600 hover:text-brand-pink font-medium transition-colors">Produtos</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-brand-pink font-medium transition-colors">Sobre Nós</a>
+                    <a href="#contato" class="text-gray-600 hover:text-brand-pink font-medium transition-colors">Contato</a>
+                    <a href="#contato" class="bg-brand-pink hover:bg-brand-dark text-white px-5 py-2.5 rounded-full font-medium transition-colors shadow-md shadow-pink-200">
+                        Faça seu Pedido
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-pink focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Oculto por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#inicio" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-pink-50">Início</a>
+                <a href="#produtos" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-pink-50">Produtos</a>
+                <a href="#sobre" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-pink-50">Sobre Nós</a>
+                <a href="#contato" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand-pink hover:bg-pink-50">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Hero (Início) -->
+    <header id="inicio" class="hero-bg h-[90vh] mt-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="text-center md:text-left max-w-2xl">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-yellow text-brand-dark font-bold text-sm tracking-wider mb-4 animate-bounce">
+                    ATACADO & VAREJO
+                </span>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
+                    Adoçando o sucesso do seu <span class="text-brand-yellow">negócio!</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-white opacity-90 mb-8 font-light drop-shadow-md">
+                    A Distribuidora de Doces E F F oferece a maior variedade de guloseimas com os melhores preços para abastecer seu comércio.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#produtos" class="bg-brand-yellow hover:bg-yellow-500 text-brand-dark font-bold text-lg px-8 py-4 rounded-full transition-transform hover:scale-105 shadow-xl text-center">
+                        Ver Produtos
+                    </a>
+                    <a href="#contato" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-brand-pink font-bold text-lg px-8 py-4 rounded-full transition-colors text-center">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Benefícios -->
+    <section class="py-12 bg-white -mt-10 relative z-10 rounded-t-3xl shadow-[0_-10px_30px_rgba(0,0,0,0.1)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-pink-50 transition-colors">
+                    <div class="w-16 h-16 bg-brand-pink rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg shadow-pink-200">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Entrega Rápida</h3>
+                    <p class="text-gray-600">Logística eficiente para que seu estoque nunca fique vazio.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-pink-50 transition-colors">
+                    <div class="w-16 h-16 bg-brand-pink rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg shadow-pink-200">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Preços de Atacado</h3>
+                    <p class="text-gray-600">Margem de lucro garantida para o seu comércio com nossos preços.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-pink-50 transition-colors">
+                    <div class="w-16 h-16 bg-brand-pink rounded-full flex items-center justify-center text-white text-2xl mb-4 shadow-lg shadow-pink-200">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Variedade</h3>
+                    <p class="text-gray-600">As melhores marcas e os doces mais procurados pelos clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="py-20 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-pink font-bold tracking-widest uppercase text-sm mb-2">Ofertas em Destaque</h2>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-brand-dark">Produtos Mais Vendidos</h3>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Produto 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-zoom cursor-pointer border border-pink-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=600" alt="Caixa de Bombons" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h4 class="absolute bottom-4 left-4 text-white font-bold text-xl">Caixa de Bombons</h4>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-gray-600 text-sm mb-4">Caixa atacado com 30 unidades das melhores marcas. Ideal para revenda.</p>
+                        <div class="mt-auto">
+                            <p class="text-xs text-gray-500 uppercase font-semibold">Preço Atacado</p>
+                            <p class="text-2xl font-bold text-brand-dark mb-4">R$ 45,90 <span class="text-sm font-normal text-gray-500">/cx</span></p>
+                            <a href="#contato" class="block w-full text-center bg-brand-pink hover:bg-brand-dark text-white font-medium py-2 rounded-lg transition-colors">
+                                <i class="fa-brands fa-whatsapp mr-1"></i> Cotar Pedido
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-zoom cursor-pointer border border-pink-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?auto=format&fit=crop&q=80&w=600" alt="Bala Mastigável" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h4 class="absolute bottom-4 left-4 text-white font-bold text-xl">Bala Mastigável</h4>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-gray-600 text-sm mb-4">Pacote de 600g sabores sortidos. Excelente margem de lucro garantida.</p>
+                        <div class="mt-auto">
+                            <p class="text-xs text-gray-500 uppercase font-semibold">Preço Atacado</p>
+                            <p class="text-2xl font-bold text-brand-dark mb-4">R$ 12,50 <span class="text-sm font-normal text-gray-500">/pct</span></p>
+                            <a href="#contato" class="block w-full text-center bg-brand-pink hover:bg-brand-dark text-white font-medium py-2 rounded-lg transition-colors">
+                                <i class="fa-brands fa-whatsapp mr-1"></i> Cotar Pedido
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-zoom cursor-pointer border border-pink-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&fit=crop&q=80&w=600" alt="Paçoca Rolha" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h4 class="absolute bottom-4 left-4 text-white font-bold text-xl">Paçoca Rolha</h4>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <p class="text-gray-600 text-sm mb-4">Pote económico com 50 unidades. O doce típico mais pedido na sua loja.</p>
+                        <div class="mt-auto">
+                            <p class="text-xs text-gray-500 uppercase font-semibold">Preço Atacado</p>
+                            <p class="text-2xl font-bold text-brand-dark mb-4">R$ 22,90 <span class="text-sm font-normal text-gray-500">/pote</span></p>
+                            <a href="#contato" class="block w-full text-center bg-brand-pink hover:bg-brand-dark text-white font-medium py-2 rounded-lg transition-colors">
+                                <i class="fa-brands fa-whatsapp mr-1"></i> Cotar Pedido
+                            </a>
+
+
+```
